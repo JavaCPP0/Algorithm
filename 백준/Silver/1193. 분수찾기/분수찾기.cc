@@ -27,23 +27,13 @@ int main() {
 
 	index = x - preSum; // i번째줄 몇번째인가?
 
-	if (line % 2 == 0) { //짝수라면
-		numerator = 1;
-		denominator = line; // ex)3번째줄 분모분자의 가장 큰수는 3이다.
-
-		for (int i = 1; i < index; i++) { //분자는 증가하고 분모는 감소한다.
-			numerator++;
-			denominator--;
-		}
+	if (line % 2 == 0) {//짝수라면 분자는 증가하고 분모는 감소한다.
+		numerator = index;
+		denominator = line - index + 1;
 	}
-	else { //홀수라면
-		numerator = line;
-		denominator = 1;
-
-		for (int i = 1; i < index; i++) { //분모는 증가하고 분자는 감소한다.
-			numerator--;
-			denominator++;
-		}
+	else {// 홀수라면 분모는 증가하고 분자는 감소한다.
+		numerator = line - index + 1;
+		denominator = index;
 	}
 
 	cout << numerator << "/" << denominator;
