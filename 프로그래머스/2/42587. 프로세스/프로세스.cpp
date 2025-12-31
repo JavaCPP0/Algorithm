@@ -12,7 +12,7 @@ int solution(vector<int> priorities, int location) {
         q.push({priorities[i], i});
     }
 
-    // 남은 문서들 중 "현재 최대 우선순위"를 쉽게 알기 위해 내림차순 정렬
+    // 남은 프로세스들 중 "현재 최대 우선순위"를 쉽게 알기 위해 내림차순 정렬
     vector<int> sorted = priorities;
     sort(sorted.begin(), sorted.end(), greater<int>());
 
@@ -35,5 +35,5 @@ int solution(vector<int> priorities, int location) {
         }
     }
 
-    return -1; // 논리상 도달하지 않음
+    return -1;
 }
